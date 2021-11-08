@@ -12,6 +12,10 @@ class Product extends Model
     public function remise(){
 
         return $this->belongsTo(Remise::class);
+    }
 
+    public function image(){
+
+        return $this->hasOne(Image::class);
     }
 }

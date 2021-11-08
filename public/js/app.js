@@ -2508,7 +2508,28 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({});
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  data: function data() {
+    return {
+      product: {}
+    };
+  },
+  mounted: function mounted() {
+    var _this = this;
+
+    this.$root.$on("fillQuickview", function (product) {
+      _this.product = product;
+    });
+  }
+});
 
 /***/ }),
 
@@ -39277,145 +39298,147 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", [
+    _c("aside", { staticClass: "product-quick-view-modal" }, [
+      _c("div", { staticClass: "product-quick-view-inner" }, [
+        _c("div", { staticClass: "product-quick-view-content" }, [
+          _vm._m(0),
+          _vm._v(" "),
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-lg-6 col-md-6 col-12" }, [
+              _c("div", { staticClass: "thumb" }, [
+                _vm.product.image
+                  ? _c("img", {
+                      attrs: {
+                        src: _vm.product.image.url,
+                        alt: _vm.product.image.nom,
+                      },
+                    })
+                  : _vm._e(),
+              ]),
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-lg-6 col-md-6 col-12" }, [
+              _c("div", { staticClass: "content" }, [
+                _c("h4", { staticClass: "title" }, [
+                  _vm._v(_vm._s(_vm.product.nom)),
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "prices" }, [
+                  _c("del", { staticClass: "price-old" }, [
+                    _vm._v(_vm._s(_vm.product.prix) + " DH"),
+                  ]),
+                  _vm._v(" "),
+                  _c("span", { staticClass: "price" }, [
+                    _vm._v(_vm._s(_vm.product.old_prix) + " DH"),
+                  ]),
+                ]),
+                _vm._v(" "),
+                _c("p", [_vm._v(_vm._s(_vm.product.description))]),
+                _vm._v(" "),
+                _vm._m(1),
+                _vm._v(" "),
+                _vm._m(2),
+              ]),
+            ]),
+          ]),
+        ]),
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "canvas-overlay" }),
+    ]),
+  ])
 }
 var staticRenderFns = [
   function () {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", [
-      _c("aside", { staticClass: "product-quick-view-modal" }, [
-        _c("div", { staticClass: "product-quick-view-inner" }, [
-          _c("div", { staticClass: "product-quick-view-content" }, [
-            _c(
-              "button",
-              { staticClass: "btn-close", attrs: { type: "button" } },
-              [
-                _c("span", { staticClass: "close-icon" }, [
-                  _c("i", { staticClass: "fa fa-close" }),
-                ]),
-              ]
-            ),
-            _vm._v(" "),
-            _c("div", { staticClass: "row" }, [
-              _c("div", { staticClass: "col-lg-6 col-md-6 col-12" }, [
-                _c("div", { staticClass: "thumb" }, [
-                  _c("img", {
-                    attrs: {
-                      src: "frontend/assets/img/shop/quick-view1.jpg",
-                      alt: "Alan-Shop",
-                    },
-                  }),
-                ]),
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "col-lg-6 col-md-6 col-12" }, [
-                _c("div", { staticClass: "content" }, [
-                  _c("h4", { staticClass: "title" }, [
-                    _vm._v("Meta Slevless Dress"),
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "prices" }, [
-                    _c("del", { staticClass: "price-old" }, [_vm._v("$85.00")]),
-                    _vm._v(" "),
-                    _c("span", { staticClass: "price" }, [_vm._v("$70.00")]),
-                  ]),
-                  _vm._v(" "),
-                  _c("p", [
-                    _vm._v(
-                      "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia,"
-                    ),
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "quick-view-select" }, [
-                    _c("div", { staticClass: "quick-view-select-item" }, [
-                      _c(
-                        "label",
-                        {
-                          staticClass: "form-label",
-                          attrs: { for: "forSizes" },
-                        },
-                        [_vm._v("Size:")]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "select",
-                        {
-                          staticClass: "form-select",
-                          attrs: { id: "forSizes", required: "" },
-                        },
-                        [
-                          _c("option", { attrs: { selected: "", value: "" } }, [
-                            _vm._v("s"),
-                          ]),
-                          _vm._v(" "),
-                          _c("option", [_vm._v("m")]),
-                          _vm._v(" "),
-                          _c("option", [_vm._v("l")]),
-                          _vm._v(" "),
-                          _c("option", [_vm._v("xl")]),
-                        ]
-                      ),
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "quick-view-select-item" }, [
-                      _c(
-                        "label",
-                        {
-                          staticClass: "form-label",
-                          attrs: { for: "forColors" },
-                        },
-                        [_vm._v("Color:")]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "select",
-                        {
-                          staticClass: "form-select",
-                          attrs: { id: "forColors", required: "" },
-                        },
-                        [
-                          _c("option", { attrs: { selected: "", value: "" } }, [
-                            _vm._v("red"),
-                          ]),
-                          _vm._v(" "),
-                          _c("option", [_vm._v("green")]),
-                          _vm._v(" "),
-                          _c("option", [_vm._v("blue")]),
-                          _vm._v(" "),
-                          _c("option", [_vm._v("yellow")]),
-                          _vm._v(" "),
-                          _c("option", [_vm._v("white")]),
-                        ]
-                      ),
-                    ]),
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "action-top" }, [
-                    _c("div", { staticClass: "pro-qty" }, [
-                      _c("input", {
-                        attrs: {
-                          type: "text",
-                          id: "quantity4",
-                          title: "Quantity",
-                          value: "1",
-                        },
-                      }),
-                    ]),
-                    _vm._v(" "),
-                    _c("button", { staticClass: "btn btn-black" }, [
-                      _vm._v("Add to cart"),
-                    ]),
-                  ]),
-                ]),
-              ]),
-            ]),
-          ]),
+    return _c(
+      "button",
+      { staticClass: "btn-close", attrs: { type: "button" } },
+      [
+        _c("span", { staticClass: "close-icon" }, [
+          _c("i", { staticClass: "fa fa-close" }),
+        ]),
+      ]
+    )
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "quick-view-select" }, [
+      _c("div", { staticClass: "quick-view-select-item" }, [
+        _c("label", { staticClass: "form-label", attrs: { for: "forSizes" } }, [
+          _vm._v("Size:"),
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "canvas-overlay" }),
+        _c(
+          "select",
+          {
+            staticClass: "form-select",
+            attrs: { id: "forSizes", required: "" },
+          },
+          [
+            _c("option", { attrs: { selected: "", value: "" } }, [_vm._v("s")]),
+            _vm._v(" "),
+            _c("option", [_vm._v("m")]),
+            _vm._v(" "),
+            _c("option", [_vm._v("l")]),
+            _vm._v(" "),
+            _c("option", [_vm._v("xl")]),
+          ]
+        ),
       ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "quick-view-select-item" }, [
+        _c(
+          "label",
+          { staticClass: "form-label", attrs: { for: "forColors" } },
+          [_vm._v("Color:")]
+        ),
+        _vm._v(" "),
+        _c(
+          "select",
+          {
+            staticClass: "form-select",
+            attrs: { id: "forColors", required: "" },
+          },
+          [
+            _c("option", { attrs: { selected: "", value: "" } }, [
+              _vm._v("red"),
+            ]),
+            _vm._v(" "),
+            _c("option", [_vm._v("green")]),
+            _vm._v(" "),
+            _c("option", [_vm._v("blue")]),
+            _vm._v(" "),
+            _c("option", [_vm._v("yellow")]),
+            _vm._v(" "),
+            _c("option", [_vm._v("white")]),
+          ]
+        ),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "action-top" }, [
+      _c("div", { staticClass: "pro-qty" }, [
+        _c("input", {
+          attrs: {
+            type: "text",
+            id: "quantity4",
+            title: "Quantity",
+            value: "1",
+          },
+        }),
+      ]),
+      _vm._v(" "),
+      _c("button", { staticClass: "btn btn-black" }, [_vm._v("Add to cart")]),
     ])
   },
 ]

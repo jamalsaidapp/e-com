@@ -100,15 +100,15 @@ $(".review-write-btn").on('click', function() {
   }
 
   // Popup Quick View JS
-  var popupProduct = $(".product-quick-view-modal");
-  $(".add-quick-view").on('click', function() {
-    popupProduct.addClass('active');
-    $("body").addClass("fix");
-  });
-  $(".btn-close, .canvas-overlay").on('click', function() {
-    popupProduct.removeClass('active');
-    $("body").removeClass("fix");
-  });
+//   var popupProduct = $(".product-quick-view-modal");
+//   $(".add-quick-view").on('click', function() {
+//     popupProduct.addClass('active');
+//     $("body").addClass("fix");
+//   });
+//   $(".btn-close, .canvas-overlay").on('click', function() {
+//     popupProduct.removeClass('active');
+//     $("body").removeClass("fix");
+//   });
 
 
 

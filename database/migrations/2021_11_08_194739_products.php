@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateProductsTable extends Migration
+class Products extends Migration
 {
     /**
      * Run the migrations.
@@ -14,27 +14,15 @@ class CreateProductsTable extends Migration
     public function up()
     {
         Schema::create('products', function (Blueprint $table) {
-            $table->engine = 'InnoDB';
-            $table->bigIncrements('id');
-
+            $table->id();
+            $table->foreignId('remise_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('category_id')->constrained()->cascadeOnDelete();
             $table->float('prix');
+            $table->float('old_prix');
             $table->integer('quantite');
             $table->string('description');
-            $table->bigInteger('id_rem')->unsigned()->index();
             $table->string('nom');
-
-            $table->bigInteger('id_ctg')->unsigned()->index();
-            $table->foreign('id_ctg')
-                    ->references('id')
-                    ->on('categories')
-                    ->onDelete('restrict')
-                    ->onUpdate('restrict');
-
-            $table->foreign('id_rem')
-                    ->references('id')
-                    ->on('remises')
-                    ->onDelete('restrict')
-                    ->onUpdate('restrict');
+            $table->boolean('sale')->default(false);
             $table->timestamps();
         });
     }

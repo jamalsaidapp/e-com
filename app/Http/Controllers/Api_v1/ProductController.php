@@ -15,7 +15,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-       return Product::with('remise')->get();
+       return Product::with(['remise','image'])->get();
     }
 
     /**
