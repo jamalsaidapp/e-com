@@ -11,7 +11,7 @@ class Product extends Model
 
     public function remise(){
 
-        return $this->belongsTo(Remise::class,'id','id');
+        return $this->belongsTo(Remise::class);
 
     }
 }
